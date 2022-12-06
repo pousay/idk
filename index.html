@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>close it ASAP</title>
+    <style>
+        body {
+            height: 90vh;
+            background-color: #111;
+        }
+
+
+        div {
+            display: flex;
+            width: 99%;
+            justify-content: center;
+        }
+
+        .b {
+            background: url("./rr.jpg") no-repeat #111;
+            background-size: cover;
+            background-position: 0px;
+        }
+
+        button {
+            margin-top: 50px;
+            text-align: center;
+            color: #000000;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px;
+            filter: none;
+        }
+
+        video {
+            margin-top: 40px;
+            width: 50%;
+        }
+
+        .hid {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 1000px) {
+            video {
+                margin-top: 10px;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <button>don't click</button>
+    </div>
+    <div>
+        <video class="hid" loop>
+            <source src="./rr.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        const b = document.querySelector("body")
+        const vid = document.querySelector("video")
+        document.querySelector("button").addEventListener("click", () => {
+            vid.classList.remove("hid")
+            document.querySelector("button").classList.add("hid")
+            vid.play()
+            b.classList.add("b")
+        })
+    </script>
+</body>
+
+</html>
